@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -153,7 +154,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      這次作業主要是使用模型訓練出來的權重檔做推論，將推論出來的結果放到3D Slicer展示，可以視覺化比較不同模型在心臟分割上的表現。實際看到各種推論結果時，才發現有些模型竟然把瓣膜預測到心臟外面，看到的當下覺得很好笑，但也提醒我還需要再調整模型與參數。
     </div>
   </div>
 
@@ -169,22 +170,23 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 完成colab baseline的推論並上傳至競賽網頁
+          </td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 使用HW2 Medium baseline訓練出來的權重檔推論50筆資料並上傳至競賽網頁
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 使用HW2 Strong Baseline訓練出來的權重檔對patient0051做推論
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -196,16 +198,73 @@
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <!-- <iframe width="100%" height="560" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+      <table>
+        <tr>
+          <td> Simple Baseline 圖片
+          <img src="simple.png" width="100%" height="560">
+        </tr>
+        <tr>
+          <td> Medium Baseline 圖片
+          <img src="medium.png" width="100%" height="560">
+        </tr>
+        <tr>
+          <td> Strong Baseline 圖片
+          <table>
+            <tr><td colspan="3">1. attention_unet</td></tr>
+            <tr>
+              <td><img src="heart-attention_unet.png" width="750px"></td>
+              <td><img src="任意角度剖半-attention_unet.png" width="750px"></td>
+              <td><img src="剖半-attention_unet.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">2. DynUNet</td></tr>
+            <tr>
+              <td><img src="heart-DynUNet.png" width="750px"></td>
+              <td><img src="任意角度剖半-DynUNet.png" width="750px"></td>
+              <td><img src="剖半-DynUNet.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">3. cotr</td></tr>
+            <tr>
+              <td><img src="heart-cotr.png" width="750px"></td>
+              <td><img src="任意角度剖半-cotr.png" width="750px"></td>
+              <td><img src="剖半-cotr.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">4. unetr</td></tr>
+            <tr>
+              <td><img src="heart-unetr.png" width="750px"></td>
+              <td><img src="任意角度剖半-unetr.png" width="750px"></td>
+              <td><img src="剖半-unetr.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">5. swinunetr</td></tr>
+            <tr>
+              <td><img src="heart-swinunetr.png" width="750px"></td>
+              <td><img src="任意角度剖半-swinunetr.png" width="750px"></td>
+              <td><img src="剖半-swinunetr.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">6. unetcnx_a1</td></tr>
+            <tr>
+              <td><img src="heart-unetcnx_a1.png" width="750px"></td>
+              <td><img src="任意角度剖半-unetcnx_a1.png" width="750px"></td>
+              <td><img src="剖半-unetcnx_a1.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">7. unest</td></tr>
+            <tr>
+              <td><img src="heart-unest.png" width="750px"></td>
+              <td><img src="任意角度剖半-unest.png" width="750px"></td>
+              <td><img src="剖半-unest.png" width="750px"></td>
+            </tr>
+            <tr><td colspan="3">8. testnet</td></tr>
+            <tr>
+              <td><img src="heart-testnet.png" width="750px"></td>
+              <td><img src="任意角度剖半-testnet.png" width="750px"></td>
+              <td><img src="剖半-testnet.png" width="750px"></td>
+            </tr>
+          </table>
+        </tr>
+      </table>
     </div>
   </div>
-
-  <!-- ------------------------------------------------>
-
-  <!-- ------------------------------------------------>
-
 
 <script>
   $(function() {

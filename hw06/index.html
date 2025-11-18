@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -153,14 +154,14 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      這次作業是用之前訓練好的模型權重檔上傳到colab進行推論，產生預測結果後交到競賽網站取得分數。透過提交後的分數，以及排行榜上的位置，可以知道模型還有很多可以改進的空間。過程中我嘗試換模型以及調整參數許多次之後，分數才有提升，我覺得很不容易。
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <table>
+      <table width="100%">
         <tr>
           <th>總分</th>
           <th>完成後打勾</th>
@@ -169,22 +170,22 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 完成 Colab baseline 的預測並上傳至競賽網頁</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 使用 HW5 Medium baseline 訓練出來的權重檔預測並上傳至競賽網頁</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 得到比 Simple baseline 更高的預測分數</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -196,9 +197,22 @@
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <!-- <iframe width="100%" height="560" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+      <table>
+        <tr>
+          <td> Simple Baseline 圖片
+          <img src="simple.png" width="100%" height="auto">
+        </tr>
+        <tr>
+          <td> Medium Baseline 圖片
+          <img src="medium.png" width="100%" height="auto">
+        </tr>
+        <tr>
+          <td> Strong Baseline 圖片
+          <img src="strong.png" width="100%" height="auto">
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -252,3 +266,4 @@
 
 </body>
 </html>
+

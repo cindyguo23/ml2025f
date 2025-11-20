@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -153,14 +154,14 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+這次作業學習到如何使用 YOLO 模型做物件偵測，我嘗試更換不同版本與大小的模型來訓練，實際觀察到速度與準確率的差異。過程中也體會到如果想拿到更好的預測結果，不能只套用預設值，而是需要依照模型特性調整 batch size、學習率等參數，讓我更了解調參對模型表現的影響。
     </div>
   </div>
 
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      <table>
+      <table width="100%">
         <tr>
           <th>總分</th>
           <th>完成後打勾</th>
@@ -169,22 +170,22 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - 完成 baseline Colab 訓練得到訓練分數及訓練權重</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 調整訓練筆數、Epochs 或其他參數得到比 Simple baseline 更高的分數</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 使用不同版本、大小模型進行訓練並繳交 Colab</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -196,9 +197,122 @@
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
     <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+      <!-- <iframe width="100%" height="560" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+
+      <table>
+        <tr>
+          <td> Simple Baseline mAP50 分數圖片
+          <img src="simple.png" width="100%" height="auto">
+        </tr>
+        <tr>
+          <td> Medium Baseline mAP50 分數圖片，修改資料集前40筆為train，後10筆為val。epochs改50，batch改4得到更高分數。
+          <img src="medium.png" width="100%" height="auto">
+        </tr>
+        <tr>
+          <td> Strong Baseline <br>
+          1. 使用YOLOv12s
+          <a href="https://colab.research.google.com/drive/196J0APOGeMBo1jMxO5PCBw8ke4R1WrHD?usp=sharing">
+          https://colab.research.google.com/drive/196J0APOGeMBo1jMxO5PCBw8ke4R1WrHD?usp=sharing
+          </a> <br>
+          <img src="mAP50_v12s.png" width="100%" height="auto">
+          2. 使用YOLOv12m
+          <a href="https://colab.research.google.com/drive/1Zj6YSgW8qdDpEDyX9m-u_tiTiuowz5a3?usp=sharing">
+          https://colab.research.google.com/drive/1Zj6YSgW8qdDpEDyX9m-u_tiTiuowz5a3?usp=sharing
+          </a> <br>
+          <img src="mAP50_v12m.png" width="100%" height="auto">
+          3. 使用YOLOv11s
+          <a href="https://colab.research.google.com/drive/1mu24pWZEyO1h5vNJ0Ojsdd1Wmzg3FG3R?usp=sharing">
+          https://colab.research.google.com/drive/1mu24pWZEyO1h5vNJ0Ojsdd1Wmzg3FG3R?usp=sharing
+          </a> <br>
+          <img src="mAP50_v11s.png" width="100%" height="auto">
+          4. 使用YOLOv11n
+          <a href="https://colab.research.google.com/drive/1pCMq9elzoEitcK7KUNZmJj6D7wZ_Nv5f?usp=sharing">
+          https://colab.research.google.com/drive/1pCMq9elzoEitcK7KUNZmJj6D7wZ_Nv5f?usp=sharing
+          </a> <br> 
+          <img src="mAP50_v11n.png" width="100%" height="auto">
+          5. 使用YOLOv11m
+          <a href="https://colab.research.google.com/drive/1Di5jiz1HVdwONg-OhvrwRlY3w5HTlMAy?usp=sharing">
+          https://colab.research.google.com/drive/1Di5jiz1HVdwONg-OhvrwRlY3w5HTlMAy?usp=sharing
+          </a> <br>
+          <img src="mAP50_v11m.png" width="100%" height="auto">
+          6. 使用YOLOv10s
+          <a href="https://colab.research.google.com/drive/13WrpFRjSJYjmRHbHzPnlYQp7rWSqIJta?usp=sharing">
+          https://colab.research.google.com/drive/13WrpFRjSJYjmRHbHzPnlYQp7rWSqIJta?usp=sharing
+          </a> <br>
+          <img src="mAP50_v10s.png" width="100%" height="auto">
+          7. 使用YOLOv10n
+          <a href="https://colab.research.google.com/drive/1HQArUTvRkyrWtDnfY0aLw5WUCvb_qMwI?usp=sharing">
+          https://colab.research.google.com/drive/1HQArUTvRkyrWtDnfY0aLw5WUCvb_qMwI?usp=sharing
+          </a> <br>
+          <img src="mAP50_v10n.png" width="100%" height="auto">
+          8. 使用YOLOv10m
+          <a href="https://colab.research.google.com/drive/1gdPX6E2W7RG6KypaXGiNiqjhr_kJh0jL?usp=sharing">
+          https://colab.research.google.com/drive/1gdPX6E2W7RG6KypaXGiNiqjhr_kJh0jL?usp=sharing
+          </a> <br>
+          <img src="mAP50_v10m.png" width="100%" height="auto">
+          9. 使用YOLOv9t
+          <a href="https://colab.research.google.com/drive/1Y15eQPbILkM6GY3OB8VR8gCUW3GkGCl1?usp=sharing">
+          https://colab.research.google.com/drive/1Y15eQPbILkM6GY3OB8VR8gCUW3GkGCl1?usp=sharing
+          </a> <br>
+          <img src="mAP50_v9t.png" width="100%" height="auto">
+          10. 使用YOLOv9s
+          <a href="https://colab.research.google.com/drive/1_sK5Pwv37HY1KQ5vtqgChKmrFFXTpVqk?usp=sharing">
+          https://colab.research.google.com/drive/1_sK5Pwv37HY1KQ5vtqgChKmrFFXTpVqk?usp=sharing
+          </a> <br>
+          <img src="mAP50_v9s.png" width="100%" height="auto">
+          11. 使用YOLOv9m
+          <a href="https://colab.research.google.com/drive/1FyLdamYUdoEZ7Y-Zt2tgqU9cuE1F_ktv?usp=sharing">
+          https://colab.research.google.com/drive/1FyLdamYUdoEZ7Y-Zt2tgqU9cuE1F_ktv?usp=sharing
+          </a> <br>
+          <img src="mAP50_v9m.png" width="100%" height="auto">
+          12. 使用YOLOv8s
+          <a href="https://colab.research.google.com/drive/1f0Iz00B5NVeW6pgEdKOpwDIdl1975Bwm?usp=sharing">
+          https://colab.research.google.com/drive/1f0Iz00B5NVeW6pgEdKOpwDIdl1975Bwm?usp=sharing
+          </a> <br>
+          <img src="mAP50_v8s.png" width="100%" height="auto">
+          13. 使用YOLOv8n
+          <a href="https://colab.research.google.com/drive/1yIo9qiCXH4ieMT0u_TxTWahy51wpJqRD?usp=sharing">
+          https://colab.research.google.com/drive/1yIo9qiCXH4ieMT0u_TxTWahy51wpJqRD?usp=sharing
+          </a> <br>
+          <img src="mAP50_v8n.png" width="100%" height="auto">
+          14. 使用YOLOv8m
+          <a href="https://colab.research.google.com/drive/1QEbsBg6I_C9rgdm9cnWsPDL040hyVgZf?usp=sharing">
+          https://colab.research.google.com/drive/1QEbsBg6I_C9rgdm9cnWsPDL040hyVgZf?usp=sharing
+          </a> <br>
+          <img src="mAP50_v8m.png" width="100%" height="auto">
+          15. 使用YOLOv6s
+          <a href="https://colab.research.google.com/drive/1JqiCClEXmRzKXTx4H-6LCSOSD3VSL40G?usp=sharing">
+          https://colab.research.google.com/drive/1JqiCClEXmRzKXTx4H-6LCSOSD3VSL40G?usp=sharing
+          </a> <br>
+          <img src="mAP50_v6s.png" width="100%" height="auto">
+          16. 使用YOLOv6n
+          <a href="https://colab.research.google.com/drive/1VAu0BjwdoOeP8pW4ilCcQ_9jkx-8F_EH?usp=sharing">
+          https://colab.research.google.com/drive/1VAu0BjwdoOeP8pW4ilCcQ_9jkx-8F_EH?usp=sharing
+          </a> <br>
+          <img src="mAP50_v6n.png" width="100%" height="auto">
+          17. 使用YOLOv6m
+          <a href="https://colab.research.google.com/drive/1p8rsrYhc5KyWw4XJ_jb1lohm7m7HzE1V?usp=sharing">
+          https://colab.research.google.com/drive/1p8rsrYhc5KyWw4XJ_jb1lohm7m7HzE1V?usp=sharing
+          </a> <br>
+          <img src="mAP50_v6m.png" width="100%" height="auto">
+          18. 使用YOLOv5s
+          <a href="https://colab.research.google.com/drive/1Qpj0_Lw2juy8QhWZAY6OkHsu1jQnMT-V?usp=sharing">
+          https://colab.research.google.com/drive/1Qpj0_Lw2juy8QhWZAY6OkHsu1jQnMT-V?usp=sharing
+          </a> <br>
+          <img src="mAP50_v5s.png" width="100%" height="auto">
+          19. 使用YOLOv5n
+          <a href="https://colab.research.google.com/drive/1tddcdL4EV7JskphFIeq6c5qrhMu41sm3?usp=sharing">
+          https://colab.research.google.com/drive/1tddcdL4EV7JskphFIeq6c5qrhMu41sm3?usp=sharing
+          </a> <br>
+          <img src="mAP50_v5n.png" width="100%" height="auto">
+          20. 使用YOLOv5m
+          <a href="https://colab.research.google.com/drive/1xAVIHYzcszeU7X73cLFtSdhnFnkFxOMd?usp=sharing">
+          https://colab.research.google.com/drive/1xAVIHYzcszeU7X73cLFtSdhnFnkFxOMd?usp=sharing
+          </a> <br>
+          <img src="mAP50_v5m.png" width="100%" height="auto">
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 
@@ -252,3 +366,8 @@
 
 </body>
 </html>
+
+
+
+
+
